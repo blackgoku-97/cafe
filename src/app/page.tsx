@@ -1,36 +1,7 @@
-const menuItems = [
-  {
-    name: "Flat white",
-    category: "Café de especialidad",
-    description: "Doble espresso y leche sedosa, en su punto justo.",
-    price: "$3.800",
-    image:
-      "https://images.unsplash.com/photo-1517256673644-36ad11246d21?auto=format&fit=crop&w=900&q=85",
-    tag: "Favorito",
-  },
-  {
-    name: "Tostada de estación",
-    category: "De nuestra cocina",
-    description: "Pan de masa madre, palta fresca y un toque de limón.",
-    price: "$6.200",
-    image:
-      "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85",
-    tag: "De temporada",
-  },
-  {
-    name: "Roll de canela",
-    category: "Recién horneado",
-    description: "Suave por dentro, doradito por fuera. Siempre casero.",
-    price: "$3.200",
-    image:
-      "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=900&q=85",
-    tag: "Hecho aquí",
-  },
-];
-
-function ArrowIcon() {
-  return <span aria-hidden="true" className="arrow-icon">↗</span>;
-}
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Footer from "@/components/Footer";
+import MenuCatalog from "@/components/MenuCatalog";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
@@ -40,20 +11,7 @@ export default function Home() {
         <p className="announcement-hours">Horario de ejemplo · Lun–Sáb, 8:00–19:00</p>
       </div>
 
-      <header className="site-header">
-        <a className="brand" href="#" aria-label="Café Bruma, inicio">
-          <span className="brand-mark" aria-hidden="true">b.</span>
-          <span className="brand-name">café bruma</span>
-        </a>
-        <nav className="main-nav" aria-label="Navegación principal">
-          <a href="#menu">El menú</a>
-          <a href="#nosotros">Nuestra historia</a>
-          <a href="#visitanos">Encuéntranos</a>
-        </nav>
-        <a className="header-link" href="#visitanos">
-          Ven a visitarnos <ArrowIcon />
-        </a>
-      </header>
+      <Navbar />
 
       <section className="hero">
         <div className="hero-copy">
@@ -64,8 +22,12 @@ export default function Home() {
             Qué bueno que llegaste.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#menu">Descubre el menú <span aria-hidden="true">↓</span></a>
-            <a className="text-link" href="#nosotros">Conoce Bruma <ArrowIcon /></a>
+            <a className="button button-dark" href="#menu">
+              Descubre el menú <ArrowDown size={15} strokeWidth={1.7} aria-hidden="true" />
+            </a>
+            <a className="text-link" href="#nosotros">
+              Conoce Bruma <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
+            </a>
           </div>
           <div className="hero-note">
             <span className="note-stars" aria-label="5 de 5 estrellas">★★★★★</span>
@@ -94,40 +56,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="menu-section" id="menu">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">Algo para cada antojo</p>
-            <h2>De la barra <em>a tu mesa.</em></h2>
-          </div>
-          <a className="text-link menu-all-link" href="#visitanos">
-            Ven por tu favorito <ArrowIcon />
-          </a>
-        </div>
-        <div className="menu-grid">
-          {menuItems.map((item, index) => (
-            <article className="menu-card" key={item.name}>
-              <div
-                className={`menu-image menu-image-${index + 1}`}
-                role="img"
-                aria-label={item.name}
-                style={{ backgroundImage: `url('${item.image}')` }}
-              >
-                <span className="menu-tag">{item.tag}</span>
-              </div>
-              <div className="menu-card-copy">
-                <div className="menu-card-topline">
-                  <p className="menu-category">{item.category}</p>
-                  <span className="menu-price">{item.price}</span>
-                </div>
-                <h3>{item.name}</h3>
-                <p className="menu-description">{item.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <p className="menu-footnote">Menú, productos y precios ficticios; solo para mostrar el concepto.</p>
-      </section>
+      <MenuCatalog />
 
       <section className="story-section" id="nosotros">
         <div className="story-ornament" aria-hidden="true">✳</div>
@@ -137,7 +66,9 @@ export default function Home() {
           Elegimos cada grano con cariño, trabajamos con productores que admiramos
           y horneamos cada mañana. Lo demás pasa alrededor de la mesa.
         </p>
-        <a className="story-link" href="#visitanos">Pasa, la puerta está abierta <span aria-hidden="true">→</span></a>
+        <a className="story-link" href="#visitanos">
+          Pasa, la puerta está abierta <ArrowUpRight size={14} aria-hidden="true" />
+        </a>
       </section>
 
       <section className="visit-section" id="visitanos">
@@ -171,14 +102,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <a className="brand footer-brand" href="#" aria-label="Café Bruma, inicio">
-          <span className="brand-mark" aria-hidden="true">b.</span>
-          <span className="brand-name">café bruma</span>
-        </a>
-        <p>Un buen café. Un buen momento.</p>
-        <span className="copyright">Proyecto ficticio · información de muestra</span>
-      </footer>
+      <Footer />
     </main>
   );
 }
