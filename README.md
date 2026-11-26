@@ -11,6 +11,27 @@ Todos los productos, precios, horarios, textos y datos de ubicación son fictici
 - Sitio desplegado: [cafe-sigma-blush.vercel.app](https://cafe-sigma-blush.vercel.app/)
 - Repositorio: [github.com/blackgoku-97/cafe](https://github.com/blackgoku-97/cafe)
 
+## Estructura del proyecto
+
+```text
+cafe-web/
+├── public/                 # Recursos estáticos
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico     # Icono de la pestaña
+│   │   ├── globals.css     # Estilos globales y responsive
+│   │   ├── layout.tsx      # Layout raíz y metadatos
+│   │   └── page.tsx        # Página principal
+│   └── components/
+│       ├── Footer.tsx      # Pie de página
+│       ├── MenuCatalog.tsx # Catálogo y filtros de productos
+│       ├── Navbar.tsx      # Navegación responsive
+│       └── index.ts        # Exportaciones de componentes
+├── package.json            # Dependencias y scripts
+├── pnpm-lock.yaml          # Versiones bloqueadas de dependencias
+└── tsconfig.json           # Configuración de TypeScript
+```
+
 ## Requisitos
 
 - Node.js

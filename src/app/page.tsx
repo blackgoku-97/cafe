@@ -1,7 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import Footer from "@/components/Footer";
-import MenuCatalog from "@/components/MenuCatalog";
-import Navbar from "@/components/Navbar";
+import { Footer, MenuCatalog, Navbar } from "@/components";
 
 export default function Home() {
   return (
