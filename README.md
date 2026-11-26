@@ -4,6 +4,11 @@ Sitio de muestra para **Café Bruma**, una cafetería completamente ficticia. Es
 
 Todos los productos, precios, horarios, textos y datos de ubicación son ficticios y no representan un negocio real. Las fotografías se cargan desde Unsplash.
 
+## Enlaces
+
+- Sitio desplegado: [cafe-sigma-blush.vercel.app](https://cafe-sigma-blush.vercel.app/)
+- Repositorio: [github.com/blackgoku-97/cafe](https://github.com/blackgoku-97/cafe)
+
 ## Requisitos
 
 - Node.js
